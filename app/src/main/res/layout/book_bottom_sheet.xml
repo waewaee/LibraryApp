@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_grey_300"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    style="?attr/bottomSheetStyle"
+    app:behavior_peekHeight="0dp"
+    app:behavior_hideable="true">
+
+    <RelativeLayout
+        android:id="@+id/rlBookDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_medium_3">
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBookImage"
+            android:layout_width="67dp"
+            android:layout_height="90dp"
+            android:src="@drawable/book_cover"
+            android:scaleType="centerCrop"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBookName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Travel Diaries"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_toEndOf="@id/ivBookImage"
+            android:layout_marginStart="@dimen/margin_medium_3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthorAndType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Niall Horan - Ebook"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_smaller"
+            android:layout_below="@id/tvBookName"
+            android:layout_alignStart="@id/tvBookName"/>
+        
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHorizontalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horizontal_line"
+        android:layout_below="@id/rlBookDetails"/>
+
+    <LinearLayout
+        android:id="@+id/llActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tvHorizontalLine"
+        android:paddingBottom="@dimen/margin_large">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_download"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:clickable="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:drawableStart="@drawable/ic_baseline_file_download_dark_grey_24"
+            android:drawablePadding="@dimen/margin_medium_2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnDeleteFromLibrary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_delete_from_your_library"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:clickable="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:drawableStart="@drawable/ic_baseline_delete_outline_dark_grey_24"
+            android:drawablePadding="@dimen/margin_medium_2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnAddToShelf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_add_to_shelves"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:clickable="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:drawableStart="@drawable/ic_baseline_add_dark_grey_24"
+            android:drawablePadding="@dimen/margin_medium_2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnMarkAsRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_mark_as_read"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:clickable="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:drawableStart="@drawable/ic_baseline_check_dark_grey_24"
+            android:drawablePadding="@dimen/margin_medium_2"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

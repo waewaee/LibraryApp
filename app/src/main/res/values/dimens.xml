@@ -33,6 +33,32 @@
     <dimen name="text_big_3x">80sp</dimen>
 
     <!-- Specifics -->
-
+    <dimen name="height_btn_start">70dp</dimen>
+    <dimen name="width_movie_item">135dp</dimen>
+    <dimen name="height_movie_image">180dp</dimen>
+    <dimen name="width_btn_play">70dp</dimen>
+    <dimen name="height_btn_play">70dp</dimen>
+    <dimen name="width_profile">50dp</dimen>
+    <dimen name="height_profile">50dp</dimen>
+    <dimen name="height_date_picker">60dp</dimen>
+    <dimen name="margin_top_welcome_image">100dp</dimen>
+    <dimen name="width_genre_chip">100dp</dimen>
+    <dimen name="height_collapsing_toolbar_movie_details">300dp</dimen>
+    <dimen name="margin_bottom_cinema">100dp</dimen>
+    <dimen name="width_barcode">200dp</dimen>
+    <dimen name="height_barcode">100dp</dimen>
+    <dimen name="width_visa_card_item">300dp</dimen>
+    <dimen name="height_visa_card_item">200dp</dimen>
+    <dimen name="max_width_navigation_view">300dp</dimen>
+    <dimen name="margin_top_left_menu_profile">64dp</dimen>
+    <dimen name="width_circle">24dp</dimen>
+    <dimen name="height_circle">24dp</dimen>
+    <dimen name="padding_bottom_seating_plan">150dp</dimen>
+    <dimen name="width_book_item">135dp</dimen>
+    <dimen name="height_book_image">180dp</dimen>
+    <dimen name="width_profile_pic">50dp</dimen>
+    <dimen name="height_profile_pic">50dp</dimen>
+    <dimen name="width_recent_book">202dp</dimen>
+    <dimen name="height_recent_book">270dp</dimen>
 
 </resources>
