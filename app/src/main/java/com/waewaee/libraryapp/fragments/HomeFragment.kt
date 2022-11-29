@@ -12,14 +12,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
+import com.waewaee.libraryapp.activities.CategoryDetailsActivity
 import com.waewaee.libraryapp.adapters.BookCategoryAdapter
 import com.waewaee.libraryapp.adapters.CarouselAdapter
 import com.waewaee.libraryapp.data.vos.VisaCardVO
+import com.waewaee.libraryapp.delegates.BookCategoryDelegate
 import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
 import com.waewaee.libraryapp.delegates.VisaCardDelegate
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(), VisaCardDelegate, BookMoreActionsDelegate {
+class HomeFragment :
+    Fragment(),
+    VisaCardDelegate,
+    BookMoreActionsDelegate,
+    BookCategoryDelegate {
 
     lateinit var carouselAdapter: CarouselAdapter
     lateinit var carousel: Carousel
@@ -48,7 +54,7 @@ class HomeFragment : Fragment(), VisaCardDelegate, BookMoreActionsDelegate {
     }
 
     private fun setUpCategoriesRecyclerView() {
-        mBookCategoryAdapter = BookCategoryAdapter(this)
+        mBookCategoryAdapter = BookCategoryAdapter(this, this)
         rvBookCategories.adapter = mBookCategoryAdapter
         rvBookCategories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
@@ -62,7 +68,7 @@ class HomeFragment : Fragment(), VisaCardDelegate, BookMoreActionsDelegate {
 
     private fun setUpCarousel() {
         carouselAdapter = CarouselAdapter(this)
-        carousel = Carousel(context as AppCompatActivity, recentBooksCarousel, carouselAdapter)
+        carousel = Carousel(mContext as AppCompatActivity, recentBooksCarousel, carouselAdapter)
         carousel.setOrientation(CarouselView.HORIZONTAL, false)
         carousel.scaleView(true)
 
@@ -88,6 +94,10 @@ class HomeFragment : Fragment(), VisaCardDelegate, BookMoreActionsDelegate {
             mSheet.state = BottomSheetBehavior.STATE_COLLAPSED
             }
         }
+    }
+
+    override fun onTapBookCategory() {
+        startActivity(CategoryDetailsActivity.newIntent(mContext as AppCompatActivity))
     }
 
 }

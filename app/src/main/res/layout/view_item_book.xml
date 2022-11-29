@@ -3,6 +3,7 @@
     android:layout_width="@dimen/width_book_item"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/margin_medium_2"
+    android:paddingBottom="@dimen/margin_large"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
@@ -38,8 +39,14 @@
         android:text="Travel Diaries"
         android:textColor="@color/secondary_text"
         android:layout_below="@id/cardBookImage"
-        android:gravity="center"
         android:layout_marginTop="@dimen/margin_medium"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="May"
+        android:textColor="@color/secondary_text"
+        android:layout_below="@id/tvBookName"/>
 
 </RelativeLayout>

@@ -7,4 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".activities.CategoryDetailsActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/flCategoryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            android:elevation="@dimen/margin_small">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Books you might like"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_regular_2x"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_ios_grey_24"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"/>
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBooksOfCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/flCategoryTitle"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/view_item_book"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:paddingHorizontal="@dimen/margin_medium"
+            android:clipToPadding="false"/>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bookOfCategoryBottomSheet"
+        layout="@layout/book_bottom_sheet"
+        />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
