@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.waewaee.libraryapp.views.pods.BooksViewPod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin_medium_2">
+
+    <LinearLayout
+        android:id="@+id/llFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/btnClearFilters"
+            android:layout_width="@dimen/width_profile_pic"
+            android:layout_height="@dimen/height_profile_pic"
+            app:srcCompat="@drawable/book_cover"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:clickable="true"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_medium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:paddingEnd="@dimen/margin_medium_2"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlSortAndChangeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llFilters"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:paddingHorizontal="@dimen/margin_medium">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnSortBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort  by: "
+            android:textColor="@color/secondary_text"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_baseline_sort_grey_24"
+            android:drawablePadding="@dimen/margin_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSortType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent"
+            android:textColor="@color/secondary_text"
+            android:layout_toEndOf="@id/btnSortBy"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnChangeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_grid_view_grey_24"
+            android:clickable="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLargeGridBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlSortAndChangeView"
+        android:layout_marginTop="@dimen/margin_medium_3"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSmallGridBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvLargeGridBooks"
+        android:layout_marginTop="@dimen/margin_medium_3"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListViewBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvSmallGridBooks"
+        android:layout_marginTop="@dimen/margin_medium_3"/>
+
+</com.waewaee.libraryapp.views.pods.BooksViewPod>

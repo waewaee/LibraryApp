@@ -60,10 +60,8 @@ class HomeFragment :
     }
 
     private fun setUpTabLayout() {
-        with(tabLayoutHome) {
-            tabLayoutHome.addTab(tabLayoutHome.newTab().setText("Ebooks"))
-            tabLayoutHome.addTab(tabLayoutHome.newTab().setText("Audio Books"))
-        }
+        tabLayoutHome.addTab(tabLayoutHome.newTab().setText("Ebooks"))
+        tabLayoutHome.addTab(tabLayoutHome.newTab().setText("Audio Books"))
     }
 
     private fun setUpCarousel() {
