@@ -33,7 +33,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvBookName"
+        android:id="@+id/tvSortBy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Travel Diaries"
@@ -47,6 +47,6 @@
         android:layout_height="wrap_content"
         android:text="May"
         android:textColor="@color/secondary_text"
-        android:layout_below="@id/tvBookName"/>
+        android:layout_below="@id/tvSortBy"/>
 
 </RelativeLayout>

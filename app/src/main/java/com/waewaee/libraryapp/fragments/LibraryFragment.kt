@@ -6,12 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
+import com.waewaee.libraryapp.delegates.BottomSheetDelegate
+import com.waewaee.libraryapp.delegates.ViewTypeDelegate
+import kotlinx.android.synthetic.main.change_view_bottom_sheet.rgViewType
 import kotlinx.android.synthetic.main.fragment_library.*
+import kotlinx.android.synthetic.main.view_pod_books.vpBooks
 
-class LibraryFragment : Fragment() {
+class LibraryFragment : Fragment(), BottomSheetDelegate, ViewTypeDelegate {
 
     var mContext: Context? = null
+    lateinit var mSortBySheet: BottomSheetBehavior<View>
+    lateinit var  mViewTypeSheet: BottomSheetBehavior<View>
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -28,13 +35,65 @@ class LibraryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mSortBySheet = BottomSheetBehavior.from(sortByBottomSheet)
+        mViewTypeSheet = BottomSheetBehavior.from(viewTypeBottomSheet)
+
         setUpTabLayout()
+        vpBooks.setDelegate(this)
+        setUpListeners()
+    }
+
+    private fun setUpListeners() {
+        rgViewType.setOnCheckedChangeListener { group, checkedId ->
+            mViewTypeSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+
+            when(checkedId) {
+                R.id.rbList -> {
+                    vpBooks.setViewType(1)
+                }
+                R.id.rbLargeGrid -> {
+                    vpBooks.setViewType(2)
+                }
+                R.id.rbSmallGrid -> {
+                    vpBooks.setViewType(3)
+                }
+            }
+        }
     }
 
     private fun setUpTabLayout() {
         tabLayoutLibrary.addTab(tabLayoutLibrary.newTab().setText("Your Books"))
         tabLayoutLibrary.addTab(tabLayoutLibrary.newTab().setText("Your Shelves"))
 
+    }
+
+    override fun onTapSortByAndViewType(bsType: Int) {
+        when(bsType) {
+            1 -> {
+                when {
+                    mSortBySheet.state != BottomSheetBehavior.STATE_EXPANDED -> {
+                        mSortBySheet.state = BottomSheetBehavior.STATE_EXPANDED
+                    }
+                    else -> {
+                        mSortBySheet.state = BottomSheetBehavior.STATE_COLLAPSED
+                    }
+                }
+            }
+            else -> {
+                when {
+                    mViewTypeSheet.state != BottomSheetBehavior.STATE_EXPANDED -> {
+                        mViewTypeSheet.state = BottomSheetBehavior.STATE_EXPANDED
+                    }
+                    else -> {
+                        mViewTypeSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+                    }
+                }
+            }
+        }
+    }
+
+    override fun onTapLargeGrid(viewType: Int) {
+        vpBooks.setViewType(viewType)
     }
 
 }

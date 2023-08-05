@@ -75,14 +75,22 @@
             android:elevation="@dimen/margin_medium"/>
 
         <include
-            android:id="@+id/viewPodBooks"
             layout="@layout/view_pod_books"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/tabLayoutLibrary"/>
-
-
+            android:layout_below="@id/tabLayoutLibrary"
+            android:layout_marginTop="-2dp" />
 
     </RelativeLayout>
+
+    <include
+        android:id="@+id/viewTypeBottomSheet"
+        layout="@layout/change_view_bottom_sheet"
+        />
+
+    <include
+        android:id="@+id/sortByBottomSheet"
+        layout="@layout/sort_by_bottom_sheet"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

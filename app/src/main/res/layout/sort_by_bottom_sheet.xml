@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_grey_300"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    style="?attr/bottomSheetStyle"
+    app:behavior_peekHeight="0dp"
+    app:behavior_hideable="true">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSortBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_sort_by"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_medium_3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHorizontalLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horizontal_line"
+        android:layout_below="@id/tvSortBy"/>
+
+    <RadioGroup
+        android:id="@+id/rgSortType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:layout_below="@id/tvHorizontalLine"
+        android:paddingBottom="@dimen/margin_large">
+
+        <RadioButton
+            android:id="@+id/rbRecentlyOpened"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_recently_opened"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:paddingStart="@dimen/margin_card_medium_2"/>
+
+        <RadioButton
+            android:id="@+id/rbTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_title"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:paddingStart="@dimen/margin_card_medium_2"/>
+
+        <RadioButton
+            android:id="@+id/rbAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_author"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_text"
+            android:paddingStart="@dimen/margin_card_medium_2"/>
+
+    </RadioGroup>
+
+</RelativeLayout>

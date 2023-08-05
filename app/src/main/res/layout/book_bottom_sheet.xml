@@ -25,7 +25,7 @@
             android:scaleType="centerCrop"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvBookName"
+            android:id="@+id/tvSortBy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Travel Diaries"
@@ -42,8 +42,8 @@
             android:text="Niall Horan - Ebook"
             android:textStyle="bold"
             android:textSize="@dimen/text_smaller"
-            android:layout_below="@id/tvBookName"
-            android:layout_alignStart="@id/tvBookName"/>
+            android:layout_below="@id/tvSortBy"
+            android:layout_alignStart="@id/tvSortBy"/>
         
     </RelativeLayout>
 
