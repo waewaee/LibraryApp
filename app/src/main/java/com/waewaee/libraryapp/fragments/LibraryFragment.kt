@@ -9,12 +9,11 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
-import com.waewaee.libraryapp.delegates.ViewTypeDelegate
 import kotlinx.android.synthetic.main.change_view_bottom_sheet.rgViewType
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.view_pod_books.vpBooks
 
-class LibraryFragment : Fragment(), BottomSheetDelegate, ViewTypeDelegate {
+class LibraryFragment : Fragment(), BottomSheetDelegate {
 
     var mContext: Context? = null
     lateinit var mSortBySheet: BottomSheetBehavior<View>
@@ -90,10 +89,6 @@ class LibraryFragment : Fragment(), BottomSheetDelegate, ViewTypeDelegate {
                 }
             }
         }
-    }
-
-    override fun onTapLargeGrid(viewType: Int) {
-        vpBooks.setViewType(viewType)
     }
 
 }

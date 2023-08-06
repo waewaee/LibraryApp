@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.waewaee.libraryapp.adapters.FilterChipAdapter
-import com.waewaee.libraryapp.adapters.LargeGridBookAdapter
+import com.waewaee.libraryapp.adapters.ViewTypeAdapter
 import com.waewaee.libraryapp.adapters.ListViewBookAdapter
 import com.waewaee.libraryapp.adapters.SmallGridBookAdapter
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
@@ -18,17 +18,18 @@ class BooksViewPod @JvmOverloads constructor(
 ) : RelativeLayout(context, attrs) {
 
     lateinit var mFilterAdapter: FilterChipAdapter
-    lateinit var mLargeGridBookAdapter: LargeGridBookAdapter
-    lateinit var mSmallGridBookAdapter: SmallGridBookAdapter
-    lateinit var mListViewBookAdapter: ListViewBookAdapter
+    lateinit var mViewTypeAdapter: ViewTypeAdapter
+//    lateinit var mSmallGridBookAdapter: SmallGridBookAdapter
+//    lateinit var mListViewBookAdapter: ListViewBookAdapter
     lateinit var bsTypeDelegate: BottomSheetDelegate
 
     override fun onFinishInflate() {
         setUpFilterRecyclerView()
         setUpListeners()
-        setUpLargeGridRecyclerView()
-        setUpSmallGridRecyclerView()
-        setUpListViewRecyclerView()
+//        setUpLargeGridRecyclerView()
+//        setUpSmallGridRecyclerView()
+//        setUpListViewRecyclerView()
+        setViewType(2)
         super.onFinishInflate()
     }
 
@@ -39,19 +40,31 @@ class BooksViewPod @JvmOverloads constructor(
     fun setViewType(viewType: Int) {
         when(viewType) {
             1 -> {
-                rvListViewBooks.visibility = View.VISIBLE
-                rvLargeGridBooks.visibility = View.GONE
-                rvSmallGridBooks.visibility = View.GONE
+//                rvListViewBooks.visibility = View.VISIBLE
+//                rvLargeGridBooks.visibility = View.GONE
+//                rvSmallGridBooks.visibility = View.GONE
+
+                mViewTypeAdapter = ViewTypeAdapter(1)
+                rvLargeGridBooks.adapter = mViewTypeAdapter
+                rvLargeGridBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             }
             2 -> {
-                rvListViewBooks.visibility = View.GONE
-                rvLargeGridBooks.visibility = View.VISIBLE
-                rvSmallGridBooks.visibility = View.GONE
+//                rvListViewBooks.visibility = View.GONE
+//                rvLargeGridBooks.visibility = View.VISIBLE
+//                rvSmallGridBooks.visibility = View.GONE
+
+                mViewTypeAdapter = ViewTypeAdapter(2)
+                rvLargeGridBooks.adapter = mViewTypeAdapter
+                rvLargeGridBooks.layoutManager = GridLayoutManager(context, 2)
             }
             else -> {
-                rvListViewBooks.visibility = View.GONE
-                rvLargeGridBooks.visibility = View.GONE
-                rvSmallGridBooks.visibility = View.VISIBLE
+//                rvListViewBooks.visibility = View.GONE
+//                rvLargeGridBooks.visibility = View.GONE
+//                rvSmallGridBooks.visibility = View.VISIBLE
+
+                mViewTypeAdapter = ViewTypeAdapter(3)
+                rvLargeGridBooks.adapter = mViewTypeAdapter
+                rvLargeGridBooks.layoutManager = GridLayoutManager(context, 3)
             }
         }
     }
@@ -65,23 +78,23 @@ class BooksViewPod @JvmOverloads constructor(
         }
     }
 
-    private fun setUpListViewRecyclerView() {
-        mListViewBookAdapter= ListViewBookAdapter()
-        rvListViewBooks.adapter =mListViewBookAdapter
-        rvListViewBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-    }
+//    private fun setUpListViewRecyclerView() {
+//        mListViewBookAdapter= ListViewBookAdapter()
+//        rvListViewBooks.adapter =mListViewBookAdapter
+//        rvListViewBooks.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//    }
+//
+//    private fun setUpSmallGridRecyclerView() {
+//        mSmallGridBookAdapter = SmallGridBookAdapter()
+//        rvSmallGridBooks.adapter = mSmallGridBookAdapter
+//        rvSmallGridBooks.layoutManager = GridLayoutManager(context, 3)
+//    }
 
-    private fun setUpSmallGridRecyclerView() {
-        mSmallGridBookAdapter = SmallGridBookAdapter()
-        rvSmallGridBooks.adapter = mSmallGridBookAdapter
-        rvSmallGridBooks.layoutManager = GridLayoutManager(context, 3)
-    }
-
-    private fun setUpLargeGridRecyclerView() {
-        mLargeGridBookAdapter = LargeGridBookAdapter()
-        rvLargeGridBooks.adapter = mLargeGridBookAdapter
-        rvLargeGridBooks.layoutManager = GridLayoutManager(context, 2)
-    }
+//    private fun setUpLargeGridRecyclerView() {
+//        mViewTypeAdapter = ViewTypeAdapter()
+//        rvLargeGridBooks.adapter = mViewTypeAdapter
+//        rvLargeGridBooks.layoutManager = GridLayoutManager(context, 2)
+//    }
 
     private fun setUpFilterRecyclerView() {
         mFilterAdapter = FilterChipAdapter()

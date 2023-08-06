@@ -77,23 +77,9 @@
         android:paddingHorizontal="@dimen/margin_medium_2">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSmallGridBooks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium_3"/>
-
-        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLargeGridBooks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginTop="@dimen/margin_medium_3"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvListViewBooks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginTop="@dimen/margin_medium_3"/>
 
     </RelativeLayout>
