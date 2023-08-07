@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/width_book_item"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="@dimen/margin_large"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardBookImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
         app:cardCornerRadius="@dimen/margin_medium"
         app:cardElevation="@dimen/margin_medium_2">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBookImage"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_book_image"
+            android:layout_height="match_parent"
             android:src="@drawable/book_cover"
             android:scaleType="centerCrop"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnMoreActions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_more_horiz_white_24"
-            android:layout_gravity="end"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"/>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -38,8 +28,11 @@
         android:layout_height="wrap_content"
         android:text="Travel Diaries"
         android:textColor="@color/secondary_text"
-        android:layout_below="@id/cardBookImage"
-        android:layout_marginTop="@dimen/margin_medium"/>
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_toEndOf="@id/cardBookImage"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_2"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvBookAuthor"
@@ -47,6 +40,17 @@
         android:layout_height="wrap_content"
         android:text="May"
         android:textColor="@color/secondary_text"
-        android:layout_below="@id/tvSortBy"/>
+        android:layout_below="@id/tvSortBy"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_alignStart="@id/tvSortBy"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnMoreActions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_more_horiz_grey_24"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
 
 </RelativeLayout>

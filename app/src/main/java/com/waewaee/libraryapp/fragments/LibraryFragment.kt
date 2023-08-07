@@ -8,16 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
+import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
 import kotlinx.android.synthetic.main.change_view_bottom_sheet.rgViewType
+import kotlinx.android.synthetic.main.fragment_home.bookBottomSheet
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.view_pod_books.vpBooks
 
-class LibraryFragment : Fragment(), BottomSheetDelegate {
+class LibraryFragment : Fragment(), BottomSheetDelegate, BookMoreActionsDelegate {
 
     var mContext: Context? = null
     lateinit var mSortBySheet: BottomSheetBehavior<View>
     lateinit var  mViewTypeSheet: BottomSheetBehavior<View>
+    lateinit var mBookBottomSheet: BottomSheetBehavior<View>
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -36,9 +39,10 @@ class LibraryFragment : Fragment(), BottomSheetDelegate {
 
         mSortBySheet = BottomSheetBehavior.from(sortByBottomSheet)
         mViewTypeSheet = BottomSheetBehavior.from(viewTypeBottomSheet)
+        mBookBottomSheet = BottomSheetBehavior.from(bookBottomSheet)
 
         setUpTabLayout()
-        vpBooks.setDelegate(this)
+        vpBooks.setBottomSheetDelegate(this, this)
         setUpListeners()
     }
 
@@ -87,6 +91,17 @@ class LibraryFragment : Fragment(), BottomSheetDelegate {
                         mViewTypeSheet.state = BottomSheetBehavior.STATE_COLLAPSED
                     }
                 }
+            }
+        }
+    }
+
+    override fun onTapBookMoreActions() {
+        when {
+            mBookBottomSheet.state != BottomSheetBehavior.STATE_EXPANDED -> {
+                mBookBottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+            else -> {
+                mBookBottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
             }
         }
     }

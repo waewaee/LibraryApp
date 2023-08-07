@@ -54,7 +54,7 @@
     <dimen name="width_circle">24dp</dimen>
     <dimen name="height_circle">24dp</dimen>
     <dimen name="padding_bottom_seating_plan">150dp</dimen>
-    <dimen name="width_book_item">135dp</dimen>
+    <dimen name="width_book_image">135dp</dimen>
     <dimen name="height_book_image">180dp</dimen>
     <dimen name="width_profile_pic">50dp</dimen>
     <dimen name="height_profile_pic">50dp</dimen>
