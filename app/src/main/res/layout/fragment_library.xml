@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_deep_orange_300"
     tools:context=".fragments.LibraryFragment">
 
     <RelativeLayout
@@ -91,6 +90,11 @@
     <include
         android:id="@+id/sortByBottomSheet"
         layout="@layout/sort_by_bottom_sheet"
+        />
+
+    <include
+        android:id="@+id/bookBottomSheet"
+        layout="@layout/book_bottom_sheet"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
