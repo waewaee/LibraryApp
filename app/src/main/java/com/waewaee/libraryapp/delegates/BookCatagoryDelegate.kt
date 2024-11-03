@@ -1,5 +1,5 @@
 package com.waewaee.libraryapp.delegates
 
-interface BookCategoryDelegate {
+interface BookCatagoryDelegate {
     fun onTapBookCategory()
 }

@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
+import com.waewaee.libraryapp.activities.BookDetailsActivity
+import com.waewaee.libraryapp.delegates.BookDetailDelegate
 import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
 import kotlinx.android.synthetic.main.bottom_sheet_change_view.rgViewType
@@ -15,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_home.bookBottomSheet
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.view_pod_books.vpBooks
 
-class LibraryFragment : Fragment(), BottomSheetDelegate, BookMoreActionsDelegate {
+class LibraryFragment : Fragment(), BottomSheetDelegate, BookDetailDelegate {
 
     var mContext: Context? = null
     lateinit var mSortBySheet: BottomSheetBehavior<View>
@@ -104,6 +107,10 @@ class LibraryFragment : Fragment(), BottomSheetDelegate, BookMoreActionsDelegate
                 mBookBottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
             }
         }
+    }
+
+    override fun onTapBook() {
+        startActivity(BookDetailsActivity.newIntent(mContext as AppCompatActivity))
     }
 
 }

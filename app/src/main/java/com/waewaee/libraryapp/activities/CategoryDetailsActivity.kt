@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
 import com.waewaee.libraryapp.adapters.BookAdapter
-import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
+import com.waewaee.libraryapp.delegates.BookDetailDelegate
 import kotlinx.android.synthetic.main.activity_category_details.*
 
-class CategoryDetailsActivity : AppCompatActivity(), BookMoreActionsDelegate {
+class CategoryDetailsActivity : AppCompatActivity(), BookDetailDelegate {
 
     private lateinit var mBooksOfCategoryAdapter: BookAdapter
 
@@ -52,5 +52,9 @@ class CategoryDetailsActivity : AppCompatActivity(), BookMoreActionsDelegate {
                 mSheet.state = BottomSheetBehavior.STATE_COLLAPSED
             }
         }
+    }
+
+    override fun onTapBook() {
+        startActivity(BookDetailsActivity.newIntent(this))
     }
 }

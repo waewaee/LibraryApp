@@ -12,20 +12,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
+import com.waewaee.libraryapp.activities.BookDetailsActivity
 import com.waewaee.libraryapp.activities.CategoryDetailsActivity
 import com.waewaee.libraryapp.adapters.BookCategoryAdapter
 import com.waewaee.libraryapp.adapters.CarouselAdapter
 import com.waewaee.libraryapp.data.vos.VisaCardVO
-import com.waewaee.libraryapp.delegates.BookCategoryDelegate
-import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
+import com.waewaee.libraryapp.delegates.BookCatagoryDelegate
+import com.waewaee.libraryapp.delegates.BookDetailDelegate
 import com.waewaee.libraryapp.delegates.VisaCardDelegate
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment :
     Fragment(),
     VisaCardDelegate,
-    BookMoreActionsDelegate,
-    BookCategoryDelegate {
+    BookCatagoryDelegate,
+    BookDetailDelegate{
 
     lateinit var carouselAdapter: CarouselAdapter
     lateinit var carousel: Carousel
@@ -96,6 +97,10 @@ class HomeFragment :
 
     override fun onTapBookCategory() {
         startActivity(CategoryDetailsActivity.newIntent(mContext as AppCompatActivity))
+    }
+
+    override fun onTapBook() {
+        startActivity(BookDetailsActivity.newIntent(mContext as AppCompatActivity))
     }
 
 }

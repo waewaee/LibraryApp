@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.waewaee.libraryapp.adapters.FilterChipAdapter
 import com.waewaee.libraryapp.adapters.BookViewTypeAdapter
+import com.waewaee.libraryapp.delegates.BookDetailDelegate
 import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
 import kotlinx.android.synthetic.main.view_pod_books.view.*
@@ -18,7 +19,7 @@ class BooksViewPod @JvmOverloads constructor(
     lateinit var mFilterAdapter: FilterChipAdapter
     lateinit var mBookViewTypeAdapter: BookViewTypeAdapter
     lateinit var bsTypeDelegate: BottomSheetDelegate
-    lateinit var bookDelegate: BookMoreActionsDelegate
+    lateinit var bookDelegate: BookDetailDelegate
 
     override fun onFinishInflate() {
         setUpFilterRecyclerView()
@@ -30,7 +31,7 @@ class BooksViewPod @JvmOverloads constructor(
         super.onFinishInflate()
     }
 
-    fun setBottomSheetDelegate(delegate : BottomSheetDelegate, delegate2: BookMoreActionsDelegate) {
+    fun setBottomSheetDelegate(delegate : BottomSheetDelegate, delegate2: BookDetailDelegate) {
         bsTypeDelegate = delegate
         bookDelegate = delegate2
     }
