@@ -113,12 +113,13 @@
 
         </RelativeLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <View
             android:id="@+id/tvDivider1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/horizontal_line"
-            android:layout_below="@id/rlBookSummary"/>
+            android:layout_height="1dp"
+            android:layout_below="@id/rlBookSummary"
+            android:background="@color/md_grey_500"
+            android:layout_marginTop="@dimen/margin_medium_2"/>
 
         <LinearLayout
             android:id="@+id/llBookDetailActions"
@@ -167,12 +168,13 @@
             android:text="@string/lbl_info_text"
             android:textSize="@dimen/text_small"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <View
             android:id="@+id/tvDivider2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/horizontal_line"
-            android:layout_below="@id/tvInfoText"/>
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tvInfoText"
+            android:background="@color/md_grey_500"
+            android:layout_marginTop="@dimen/margin_medium_2"/>
 
         <FrameLayout
             android:id="@+id/flAboutEbook"

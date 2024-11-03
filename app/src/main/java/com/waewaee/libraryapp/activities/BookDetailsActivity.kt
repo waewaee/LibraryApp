@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.waewaee.libraryapp.R
 import com.waewaee.libraryapp.adapters.ReviewAdapter
+import kotlinx.android.synthetic.main.activity_book_details.btnBack
 import kotlinx.android.synthetic.main.activity_book_details.rvReviews
 
 class BookDetailsActivity : AppCompatActivity() {
@@ -28,7 +29,9 @@ class BookDetailsActivity : AppCompatActivity() {
     }
 
     private fun setUpListeners() {
-        super.onBackPressed()
+        btnBack.setOnClickListener {
+            super.onBackPressed()
+        }
     }
 
     private fun setUpRecyclerView() {
