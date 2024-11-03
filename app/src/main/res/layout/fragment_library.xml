@@ -97,4 +97,9 @@
         layout="@layout/bottom_sheet_book"
         />
 
+    <include
+        android:id="@+id/bookBottomSheet"
+        layout="@layout/bottom_sheet_book"
+        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
