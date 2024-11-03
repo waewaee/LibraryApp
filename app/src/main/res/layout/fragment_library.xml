@@ -84,17 +84,17 @@
 
     <include
         android:id="@+id/viewTypeBottomSheet"
-        layout="@layout/change_view_bottom_sheet"
+        layout="@layout/bottom_sheet_change_view"
         />
 
     <include
         android:id="@+id/sortByBottomSheet"
-        layout="@layout/sort_by_bottom_sheet"
+        layout="@layout/bottom_sheet_sort_by"
         />
 
     <include
         android:id="@+id/bookBottomSheet"
-        layout="@layout/book_bottom_sheet"
+        layout="@layout/bottom_sheet_book"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

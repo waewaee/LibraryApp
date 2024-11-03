@@ -107,7 +107,7 @@
 
     <include
         android:id="@+id/bookBottomSheet"
-        layout="@layout/book_bottom_sheet"
+        layout="@layout/bottom_sheet_book"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

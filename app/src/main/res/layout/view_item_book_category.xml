@@ -7,7 +7,7 @@
         android:id="@+id/tvBookCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Books you might like"
+        android:text="@string/lbl_books_you_might_like"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="@dimen/text_regular_2x"

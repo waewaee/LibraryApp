@@ -23,7 +23,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSortBy"
+        android:id="@+id/tvBookName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Travel Diaries"
@@ -40,9 +40,9 @@
         android:layout_height="wrap_content"
         android:text="May"
         android:textColor="@color/secondary_text"
-        android:layout_below="@id/tvSortBy"
+        android:layout_below="@id/tvBookName"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_alignStart="@id/tvSortBy"/>
+        android:layout_alignStart="@id/tvBookName"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btnMoreActions"

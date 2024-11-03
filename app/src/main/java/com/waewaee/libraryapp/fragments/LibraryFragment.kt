@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.waewaee.libraryapp.R
 import com.waewaee.libraryapp.delegates.BookMoreActionsDelegate
 import com.waewaee.libraryapp.delegates.BottomSheetDelegate
-import kotlinx.android.synthetic.main.change_view_bottom_sheet.rgViewType
+import kotlinx.android.synthetic.main.bottom_sheet_change_view.rgViewType
 import kotlinx.android.synthetic.main.fragment_home.bookBottomSheet
 import kotlinx.android.synthetic.main.fragment_library.*
 import kotlinx.android.synthetic.main.view_pod_books.vpBooks
