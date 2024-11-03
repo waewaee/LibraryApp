@@ -24,6 +24,11 @@ class BookDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_book_details)
 
         setUpRecyclerView()
+        setUpListeners()
+    }
+
+    private fun setUpListeners() {
+        super.onBackPressed()
     }
 
     private fun setUpRecyclerView() {

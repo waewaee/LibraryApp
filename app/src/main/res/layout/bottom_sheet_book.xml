@@ -47,12 +47,13 @@
         
     </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <View
         android:id="@+id/tvDivider1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/horizontal_line"
-        android:layout_below="@id/rlBookDetails"/>
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rlBookDetails"
+        android:background="@color/md_grey_500"
+        android:layout_marginTop="@dimen/margin_medium"/>
 
     <LinearLayout
         android:id="@+id/llActions"

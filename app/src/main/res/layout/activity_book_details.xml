@@ -207,6 +207,7 @@
             android:layout_below="@id/flAboutEbook"
             android:layout_marginTop="@dimen/margin_medium_2"
             android:layout_marginBottom="@dimen/margin_medium_2"
+            android:textStyle="bold"
             android:text="The Fault in Our Stars is a novel by John Green. It is his fourth solo novel, and sixth novel overall. It was published on January 10, 2012. The title is inspired by Act 1, Scene 2 of Shakespeare\'s play Julius Caesar" />
 
         <FrameLayout

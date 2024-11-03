@@ -9,13 +9,13 @@ import com.waewaee.libraryapp.delegates.BookDetailDelegate
 import com.waewaee.libraryapp.views.holders.BookCategoryViewHolder
 
 class BookCategoryAdapter(
-    private var mBookCatagoryDelegate: BookCatagoryDelegate,
+    private var mBookCategoryDelegate: BookCatagoryDelegate,
     private var mBookDetailDelegate: BookDetailDelegate
     ): RecyclerView.Adapter<BookCategoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookCategoryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.view_item_book_category, parent, false)
-        return BookCategoryViewHolder(view, mBookDetailDelegate, mBookCatagoryDelegate)
+        return BookCategoryViewHolder(view, mBookDetailDelegate, mBookCategoryDelegate)
     }
 
     override fun onBindViewHolder(holder: BookCategoryViewHolder, position: Int) {

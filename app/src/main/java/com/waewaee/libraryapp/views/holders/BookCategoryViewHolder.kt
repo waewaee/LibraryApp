@@ -11,9 +11,8 @@ import kotlinx.android.synthetic.main.view_item_book_category.view.*
 class BookCategoryViewHolder(
     itemView: View,
     mBookDetailDelegate: BookDetailDelegate,
-    mBookCatagoryDelegate: BookCatagoryDelegate
-)
-                             : RecyclerView.ViewHolder(itemView) {
+    mBookCategoryDelegate: BookCatagoryDelegate
+    ) : RecyclerView.ViewHolder(itemView) {
 
     init {
         val mBookAdapter = BookAdapter(mBookDetailDelegate)
@@ -21,7 +20,7 @@ class BookCategoryViewHolder(
         itemView.rvBooks.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
 
         itemView.btnToCategoryDetails.setOnClickListener {
-            mBookCatagoryDelegate.onTapBookCategory()
+            mBookCategoryDelegate.onTapBookCategory()
         }
     }
 }
