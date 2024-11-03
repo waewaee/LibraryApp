@@ -31,4 +31,9 @@
     <string name="lbl_ratings_and_reviews">Ratings and Reviews</string>
     <string name="lbl_published">Published</string>
     <string name="lbl_dash"> - </string>
+    <string name="lbl_rating_5">5</string>
+    <string name="lbl_rating_4">4</string>
+    <string name="lbl_rating_3">3</string>
+    <string name="lbl_rating_2">2</string>
+    <string name="lbl_rating_1">1</string>
 </resources>

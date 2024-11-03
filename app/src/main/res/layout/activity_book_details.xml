@@ -266,6 +266,7 @@
                 android:layout_height="wrap_content"
                 android:rating="3.9"
                 style="@style/Widget.AppCompat.RatingBar.Small"
+                android:progressTint="@color/colorPrimary"
                 app:layout_constraintTop_toBottomOf="@id/tvOverallRating"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="@dimen/margin_medium"/>
