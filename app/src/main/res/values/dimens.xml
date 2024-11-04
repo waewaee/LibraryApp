@@ -60,5 +60,6 @@
     <dimen name="height_profile_pic">50dp</dimen>
     <dimen name="width_recent_book">202dp</dimen>
     <dimen name="height_recent_book">270dp</dimen>
+    <dimen name="height_app_bar">56dp</dimen>
 
 </resources>

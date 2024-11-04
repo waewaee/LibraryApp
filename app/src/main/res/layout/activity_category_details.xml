@@ -14,7 +14,7 @@
         <FrameLayout
             android:id="@+id/flCategoryTitle"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="@dimen/height_app_bar"
             android:background="@color/white"
             android:elevation="@dimen/margin_small">
 
