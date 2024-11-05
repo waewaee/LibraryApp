@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.waewaee.libraryapp.R
 import com.waewaee.libraryapp.adapters.ReviewAdapter
 import kotlinx.android.synthetic.main.activity_book_details.btnBack
+import kotlinx.android.synthetic.main.activity_book_details.btnMoreAboutRatingsAndReviews
 import kotlinx.android.synthetic.main.activity_book_details.btnMoreAboutThisBook
 import kotlinx.android.synthetic.main.activity_book_details.rvReviews
 
@@ -36,6 +37,10 @@ class BookDetailsActivity : AppCompatActivity() {
 
         btnMoreAboutThisBook.setOnClickListener {
             startActivity(MoreAboutBookDetailsActivity.newIntent(this))
+        }
+
+        btnMoreAboutRatingsAndReviews.setOnClickListener {
+            startActivity(MoreAboutRatingsAndReviewsActivity.newIntent(this))
         }
     }
 

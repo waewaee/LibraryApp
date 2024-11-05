@@ -14,7 +14,7 @@ class ReviewAdapter: RecyclerView.Adapter<ReviewViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return 10
     }
 
     override fun onBindViewHolder(holder: ReviewViewHolder, position: Int) {

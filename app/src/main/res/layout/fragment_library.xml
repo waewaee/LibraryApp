@@ -7,80 +7,87 @@
     android:layout_height="match_parent"
     tools:context=".fragments.LibraryFragment">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewSearch"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            app:cardCornerRadius="@dimen/margin_medium"
-            app:cardElevation="@dimen/margin_medium">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_medium_2"
-                android:layout_marginVertical="@dimen/margin_medium"
-                android:focusable="true"
-                android:focusableInTouchMode="true">
+                android:layout_marginTop="@dimen/margin_medium_2"
+                app:cardCornerRadius="@dimen/margin_medium"
+                app:cardElevation="@dimen/margin_medium">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivSearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search_black"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:layout_marginHorizontal="@dimen/margin_medium"/>
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivProfile"
-                    android:layout_width="@dimen/width_profile_pic"
-                    android:layout_height="@dimen/height_profile_pic"
-                    app:srcCompat="@drawable/profile_photo"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/roundedImageView"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginHorizontal="@dimen/margin_medium"/>
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/etSearch"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:layout_toEndOf="@id/ivSearch"
-                    android:hint="@string/hint_search_bar"/>
+                    android:layout_marginHorizontal="@dimen/margin_medium_2"
+                    android:layout_marginVertical="@dimen/margin_medium"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
-            </RelativeLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search_black"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:layout_marginHorizontal="@dimen/margin_medium"/>
 
-        </androidx.cardview.widget.CardView>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="@dimen/width_profile_pic"
+                        android:layout_height="@dimen/height_profile_pic"
+                        app:srcCompat="@drawable/profile_photo"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/roundedImageView"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginHorizontal="@dimen/margin_medium"/>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayoutLibrary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/cardViewSearch"
-            app:tabTextColor="@color/secondary_text"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabIndicatorHeight="4dp"
-            app:tabTextAppearance="@style/MyCustomTextAppearance"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginHorizontal="@dimen/margin_medium_3"
-            android:elevation="@dimen/margin_medium"/>
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:layout_toEndOf="@id/ivSearch"
+                        android:hint="@string/hint_search_bar"/>
 
-        <include
-            layout="@layout/view_pod_books"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tabLayoutLibrary"
-            android:layout_marginTop="-2dp" />
+                </RelativeLayout>
 
-    </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardViewSearch"
+                app:tabTextColor="@color/secondary_text"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabIndicatorHeight="4dp"
+                app:tabTextAppearance="@style/MyCustomTextAppearance"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginHorizontal="@dimen/margin_medium_3"
+                android:elevation="@dimen/margin_medium"/>
+
+            <include
+                layout="@layout/view_pod_books"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tabLayoutLibrary"
+                android:layout_marginTop="-2dp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <include
         android:id="@+id/viewTypeBottomSheet"
@@ -90,11 +97,6 @@
     <include
         android:id="@+id/sortByBottomSheet"
         layout="@layout/bottom_sheet_sort_by"
-        />
-
-    <include
-        android:id="@+id/bookBottomSheet"
-        layout="@layout/bottom_sheet_book"
         />
 
     <include

@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/margin_medium_2"
     tools:context=".activities.MoreAboutBookDetailsActivity">
 
     <RelativeLayout
         android:id="@+id/rlAppBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_app_bar"
-        android:layout_marginTop="@dimen/margin_medium_2"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginHorizontal="@dimen/margin_medium_2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="@dimen/margin_small">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnBack"
@@ -32,7 +32,7 @@
             android:textStyle="bold"
             android:layout_toEndOf="@id/btnBack"
             android:layout_marginTop="@dimen/margin_medium_2"
-            android:layout_marginStart="@dimen/margin_xlarge"/>
+            android:layout_marginStart="@dimen/margin_large"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvBookName"
@@ -47,15 +47,23 @@
 
     </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvBookDetail"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="The Fault in Our Stars is a novel by John Green. It is his fourth solo novel, and sixth novel overall. It was published on January 10, 2012. The title is inspired by Act 1, Scene 2 of Shakespeare's play Julius Caesar, in which the nobleman Cassius says to Brutus: Men at some time were masters of their fates, The fault, dear Brutus, is not in our stars, But in ourselves, that we are underlings. The story is narrated by Hazel Grace Lancaster, a 16-year-old girl with thyroid cancer that has affected her lungs. Hazel is forced by her parents to attend a support group where she subsequently meets and falls in love with 17-year-old Augustus Waters, an ex-basketball player, amputee, and survivor of osteosarcoma.
-\n An American feature film adaptation of the same name as the novel directed by Josh Boone and starring Shailene Woodley, Ansel Elgort, and Nat Wolff was released on June 6, 2014.[1] A Hindi feature film adaptation of the novel, titled Dil Bechara, which was directed by Mukesh Chhabra and starring Sushant Singh Rajput, Sanjana Sanghi, Saswata Chatterjee, Swastika Mukherjee and Saif Ali Khan, was released on July 24, 2020, on Disney+ Hotstar.[2] The American film adaptation and the book enjoyed strong critical and commercial success, with the latter becoming one of the best-selling books of all time."
-        android:textStyle="bold"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_medium_2"
         app:layout_constraintTop_toBottomOf="@id/rlAppBar"
-        android:layout_marginTop="@dimen/margin_xlarge"
-        android:paddingBottom="@dimen/margin_xxlarge"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/margin_xlarge">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBookDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Fault in Our Stars is a novel by John Green. It is his fourth solo novel, and sixth novel overall. It was published on January 10, 2012. The title is inspired by Act 1, Scene 2 of Shakespeare's play Julius Caesar, in which the nobleman Cassius says to Brutus: Men at some time were masters of their fates, The fault, dear Brutus, is not in our stars, But in ourselves, that we are underlings. The story is narrated by Hazel Grace Lancaster, a 16-year-old girl with thyroid cancer that has affected her lungs. Hazel is forced by her parents to attend a support group where she subsequently meets and falls in love with 17-year-old Augustus Waters, an ex-basketball player, amputee, and survivor of osteosarcoma.
+\n An American feature film adaptation of the same name as the novel directed by Josh Boone and starring Shailene Woodley, Ansel Elgort, and Nat Wolff was released on June 6, 2014.[1] A Hindi feature film adaptation of the novel, titled Dil Bechara, which was directed by Mukesh Chhabra and starring Sushant Singh Rajput, Sanjana Sanghi, Saswata Chatterjee, Swastika Mukherjee and Saif Ali Khan, was released on July 24, 2020, on Disney+ Hotstar.[2] The American film adaptation and the book enjoyed strong critical and commercial success, with the latter becoming one of the best-selling books of all time."
+            android:textStyle="bold"
+            android:paddingBottom="@dimen/margin_xxlarge"/>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
