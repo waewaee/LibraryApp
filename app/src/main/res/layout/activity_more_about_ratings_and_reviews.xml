@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MoreAboutRatingsAndReviewsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin_medium_2">
+
+        <FrameLayout
+            android:id="@+id/flAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_app_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="@dimen/margin_small">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_ios_grey_24"
+                android:layout_marginTop="@dimen/margin_medium_2"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRatingsAndReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_ratings_and_reviews"
+                android:textSize="@dimen/text_regular_3x"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRatingsAndReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/flAppBar"
+            android:layout_marginTop="@dimen/margin_medium_2">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOverallRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.9"
+                android:textSize="@dimen/text_big_2x"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rbOverallRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="3.9"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:progressTint="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/tvOverallRating"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoOfRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="95 ratings"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintTop_toBottomOf="@id/rbOverallRating"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_small"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_rating_5"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pbRating5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="30"
+                android:max="100"
+                app:trackCornerRadius="10dp"
+                app:trackThickness="12dp"
+                app:trackColor="@color/colorPrimary"
+                app:indicatorColor="@color/md_yellow_700"
+                app:layout_constraintStart_toEndOf="@id/tvRating5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_rating_4"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/tvRating5"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pbRating4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="40"
+                android:max="100"
+                app:trackCornerRadius="10dp"
+                app:trackThickness="12dp"
+                app:trackColor="@color/colorPrimary"
+                app:indicatorColor="@color/md_yellow_700"
+                app:layout_constraintStart_toEndOf="@id/tvRating4"
+                app:layout_constraintTop_toBottomOf="@id/pbRating5"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_rating_3"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/tvRating4"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pbRating3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="20"
+                android:max="100"
+                app:trackCornerRadius="10dp"
+                app:trackThickness="12dp"
+                app:trackColor="@color/colorPrimary"
+                app:indicatorColor="@color/md_yellow_700"
+                app:layout_constraintStart_toEndOf="@id/tvRating3"
+                app:layout_constraintTop_toBottomOf="@id/pbRating4"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_rating_2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/tvRating3"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pbRating2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="3"
+                android:max="100"
+                app:trackCornerRadius="10dp"
+                app:trackThickness="12dp"
+                app:trackColor="@color/colorPrimary"
+                app:indicatorColor="@color/md_yellow_700"
+                app:layout_constraintStart_toEndOf="@id/tvRating5"
+                app:layout_constraintTop_toBottomOf="@id/pbRating3"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_rating_1"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/tvRating2"
+                android:layout_marginStart="@dimen/margin_large"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pbRating1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="3"
+                android:max="100"
+                app:trackCornerRadius="10dp"
+                app:trackThickness="12dp"
+                app:trackColor="@color/colorPrimary"
+                app:indicatorColor="@color/md_yellow_700"
+                app:layout_constraintStart_toEndOf="@id/tvRating5"
+                app:layout_constraintTop_toBottomOf="@id/pbRating2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_medium"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRatingFilters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/view_item_rating_filter_chip"
+                tools:itemCount="5"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@id/tvNoOfRatings"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/view_item_review"
+            android:layout_marginTop="@dimen/margin_large"
+            android:paddingBottom="@dimen/margin_xxlarge"
+            app:layout_constraintTop_toBottomOf="@id/clRatingsAndReviews"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
